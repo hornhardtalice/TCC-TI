@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TripTrack - Explore o Mundo</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function toggleForm(action) {
+            const loginForm = document.getElementById('login-form');
+            const registerForm = document.getElementById('register-form');
+            if (action === 'login') {
+                loginForm.style.display = 'block';
+                registerForm.style.display = 'none';
+            } else if (action === 'register') {
+                loginForm.style.display = 'none';
+                window.location.href = 'registrar.html';  <!-- Altere para o URL da sua página de registro -->
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <img src="logo.png" alt="Logo TripTrack" class="logo">
+            <nav class="nav">
+                <a href="#">Explorar Regiões</a>
+                <a href="#">Experiências</a>
+                <a href="#" onclick="toggleForm('login')">Entrar</a>
+                <a href="#" onclick="toggleForm('register')">Registrar</a>
+            </nav>
+        </header>
+        
+        <section class="hero">
+            <h1>Explore Regiões</h1>
+            <p class="subtitle">Descubra os melhores destinos com feedbacks de viajantes.</p>
+            <div class="buttons">
+                <a href="#" class="btn-primary" onclick="toggleForm('login')">Entrar / Registrar</a>
+            </div>
+        </section>
+
+        <!-- Formulário de Login (Inicia Oculto) -->
+        <section id="login-form" style="display: none;">
+            <h2>Entrar</h2>
+            <form action="#">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+                
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
+                
+                <div class="social-login">
+                    <button type="button" class="btn-social">Entrar com Google</button>
+                    <button type="button" class="btn-social">Entrar com Facebook</button>
+                </div>
+                
+                <button type="submit" class="btn-primary">Entrar</button>
+                <button  type="submit" class="btn-secondary">Registrar</button>
+            </form>
+        </section>
+
+        <!-- Formulário de Registro (Inicia Oculto) -->
+        <section id="register-form" style="display: none;">
+            <h2>Registrar-se</h2>
+            <p>Você será redirecionado para a página de registro.</p>
+        </section>
+
+    </div>
+</body>
+</html>
